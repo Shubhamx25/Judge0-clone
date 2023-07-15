@@ -1,10 +1,11 @@
 const express = require('express');
-
 const router = express.Router();
 
-router.get('/', (req,res) => {
-    res.json({msg: 'Route working'});
-})
+const {register, login} = require('../controllers/authControllers')
+
+router.post('/register', register);
+
+router.post('/', login);
 
 
 

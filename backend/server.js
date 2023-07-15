@@ -1,9 +1,18 @@
 const express = require('express');
 require('dotenv').config();
+var cors = require('cors')
 
 const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+ 
+app.use(cors(corsOptions)) // to cors error 
 
 //Connecting to database
 require('./dbConnection');

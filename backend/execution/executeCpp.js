@@ -27,7 +27,6 @@ const executeCpp = async (filePath) => {
             })
         
     }); 
-    return true;
     
 }
 

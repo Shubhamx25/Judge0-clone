@@ -18,11 +18,13 @@ const codeFileConfig = async (format, code) => {
         let classTitle;
         let codeData = code.split(' ');
         for(let i = 0;i <= codeData.length; i++){
+            console.log(codeData[i]);
             if(codeData[i] === "class"){
-                classTitle = codeData[i+1];
+                classTitle = codeData[i+1]; 
                 break;
             }
         }
+        console.log('classtitle',classTitle);
         const filename = `${uniqueId}_${classTitle}.${format}`;
         const filepath = path.join(dirCodes, filename);
         await fs.writeFileSync(filepath, code);
